@@ -24,10 +24,16 @@ const Navbar = () => {
                     Dashboard
                   </Link>
                   <Link
+                    href="/tasks"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Tasks
+                  </Link>
+                  <Link
                     href="/chat"
                     className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
                   >
-                    Chat Assistant
+                    AI Assistant
                   </Link>
                 </>
               ) : (
@@ -44,12 +50,20 @@ const Navbar = () => {
           </div>
           <div className="flex items-center">
             {isAuthenticated ? (
-              <button
-                onClick={logout}
-                className="ml-4 px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-              >
-                Logout
-              </button>
+              <div className="flex items-center space-x-4">
+                <Link
+                  href="/chat"
+                  className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 hidden md:block"
+                >
+                  Open Chat
+                </Link>
+                <button
+                  onClick={logout}
+                  className="ml-4 px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                >
+                  Logout
+                </button>
+              </div>
             ) : (
               <div className="flex space-x-4">
                 <Link

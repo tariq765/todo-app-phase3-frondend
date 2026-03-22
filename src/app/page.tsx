@@ -1,149 +1,65 @@
-'use client';
-
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-20 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-10 left-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-20 right-40 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36">
-        <div className={`transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight">
-              <span className="block">Organize Your Life with</span>
-              <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-                Smart Todo App
-              </span>
-            </h1>
-            <p className="mt-6 max-w-lg mx-auto text-xl text-gray-600">
-              Transform the way you manage tasks. Our intelligent assistant helps you stay organized and productive.
-            </p>
-            
-            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                href="/register"
-                className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-indigo-300"
-              >
-                Get Started Free
-              </Link>
-              
-              <Link
-                href="/login"
-                className="px-8 py-4 bg-white text-gray-800 font-semibold rounded-xl shadow-lg hover:shadow-xl border border-gray-200 transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gray-300"
-              >
-                Sign In
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-16 max-w-5xl mx-auto">
-            <div className="relative rounded-2xl shadow-xl overflow-hidden border border-gray-200 bg-white/80 backdrop-blur-sm">
-              <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))]"></div>
-              <div className="relative p-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100">
-                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Smart Tasks</h3>
-                    <p className="text-gray-600">AI-powered task management that learns your habits and suggests priorities.</p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+            <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+              <div className="sm:text-center lg:text-left">
+                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                  <span className="block xl:inline">Transform Your</span>{' '}
+                  <span className="block text-indigo-600 xl:inline">Task Management</span>
+                </h1>
+                <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                  A beautiful, secure, and responsive todo application that helps you organize your life with intuitive features and AI-powered assistance.
+                </p>
+                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                  <div className="rounded-md shadow">
+                    <Link
+                      href="/login"
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10 transition-all duration-300 transform hover:scale-105"
+                    >
+                      Login
+                    </Link>
                   </div>
-                  
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100">
-                    <div className="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Time Tracking</h3>
-                    <p className="text-gray-600">Monitor how much time you spend on each task to boost productivity.</p>
-                  </div>
-                  
-                  <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl border border-green-100">
-                    <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Secure & Private</h3>
-                    <p className="text-gray-600">Your data is encrypted and stored securely with industry-leading protection.</p>
+                  <div className="mt-3 sm:mt-0 sm:ml-3">
+                    <Link
+                      href="/register"
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10 transition-all duration-300 transform hover:scale-105"
+                    >
+                      Get Started
+                    </Link>
                   </div>
                 </div>
               </div>
-            </div>
+            </main>
           </div>
-
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Personal AI Assistant</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Our intelligent chatbot understands natural language commands. Simply tell it "add a task to buy groceries" 
-                or "show me my urgent tasks" and watch it work seamlessly.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <svg className="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+        </div>
+        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+          <div className="h-56 w-full bg-gradient-to-r from-indigo-500 to-purple-600 sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center">
+            <div className="p-8 text-white text-center">
+              <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-2xl p-8 shadow-2xl">
+                <h3 className="text-xl font-bold mb-4">Smart Task Management</h3>
+                <div className="space-y-4 text-left">
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-green-400"></div>
+                    <p className="ml-3 text-sm">AI-Powered Assistant</p>
                   </div>
-                  <p className="ml-3 text-gray-600">Natural language processing for intuitive task creation</p>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <svg className="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-green-400"></div>
+                    <p className="ml-3 text-sm">Real-time Sync</p>
                   </div>
-                  <p className="ml-3 text-gray-600">Smart notifications to keep you on track</p>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <svg className="h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-green-400"></div>
+                    <p className="ml-3 text-sm">Secure Authentication</p>
                   </div>
-                  <p className="ml-3 text-gray-600">Cross-device synchronization</p>
-                </li>
-              </ul>
-            </div>
-            <div className="order-1 md:order-2 flex justify-center">
-              <div className="relative">
-                <div className="w-72 h-72 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-xl flex items-center justify-center">
-                  <div className="bg-white rounded-xl w-64 h-64 p-4 flex flex-col">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <div className="flex-1 bg-gray-100 rounded-lg p-3 overflow-y-auto">
-                      <div className="text-xs text-gray-500 mb-2">You:</div>
-                      <div className="bg-blue-100 rounded-lg p-2 mb-3 text-sm">Add a task to buy groceries</div>
-                      
-                      <div className="text-xs text-gray-500 mb-2">Assistant:</div>
-                      <div className="bg-green-100 rounded-lg p-2 text-sm">Sure! I've added "buy groceries" to your task list. Would you like to set a priority or due date?</div>
-                    </div>
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0 h-5 w-5 rounded-full bg-green-400"></div>
+                    <p className="ml-3 text-sm">Beautiful UI</p>
                   </div>
-                </div>
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
                 </div>
               </div>
             </div>
@@ -151,31 +67,100 @@ export default function Home() {
         </div>
       </div>
 
-      <style jsx global>{`
-        @keyframes blob {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
+      {/* Features Section */}
+      <div className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center">
+            <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Features</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Everything you need to stay organized
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              Our platform provides all the tools you need to manage your tasks efficiently and effectively.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+              <div className="relative">
+                <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                </div>
+                <div className="ml-16">
+                  <h3 className="text-lg font-medium text-gray-900">Task Management</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    Create, organize, and track your tasks with our intuitive interface. Set priorities, deadlines, and categories to stay on top of everything.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  </svg>
+                </div>
+                <div className="ml-16">
+                  <h3 className="text-lg font-medium text-gray-900">AI Assistant</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    Our intelligent chatbot helps you manage tasks using natural language. Simply tell it what you need to do and it will create tasks for you.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                </div>
+                <div className="ml-16">
+                  <h3 className="text-lg font-medium text-gray-900">Secure & Private</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    Your data is protected with industry-standard encryption and secure authentication. Your privacy is our top priority.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                  </svg>
+                </div>
+                <div className="ml-16">
+                  <h3 className="text-lg font-medium text-gray-900">Real-time Sync</h3>
+                  <p className="mt-2 text-base text-gray-500">
+                    Tasks created via chatbot or on any device instantly appear across all your devices. Never lose track of your progress.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-600">
+        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <span className="block">Ready to start organizing?</span>
+            <span className="block text-indigo-200">Join today and transform your productivity.</span>
+          </h2>
+          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div className="inline-flex rounded-md shadow">
+              <Link
+                href="/register"
+                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition-all duration-300 transform hover:scale-105"
+              >
+                Get started
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

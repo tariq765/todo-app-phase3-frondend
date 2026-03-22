@@ -32,11 +32,12 @@ interface UpdateTaskData {
  */
 export async function getUserTasks(userId: string, token: string): Promise<ApiResponse<Task[]>> {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/${userId}/tasks`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/${userId}/tasks?_t=${Date.now()}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache',
       },
     });
 
